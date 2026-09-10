@@ -1,0 +1,429 @@
+/* ==========================================================================
+   JAVED ORGANIC STORE - PREMIUM DESIGN SYSTEM & THEME SYSTEM
+   ========================================================================== */
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Color Palette - Royal Desi Green */
+  --color-primary-950: #05140B;
+  --color-primary-900: #0A2114;
+  --color-primary-800: #103320;
+  --color-primary-700: #16462C;
+  --color-primary-600: #1D5C3A;
+  --color-primary-500: #287A4F;
+  --color-primary-100: #E2EFE7;
+  --color-primary-50:  #F0F7F3;
+
+  /* Royal Desi Gold & Amber */
+  --color-gold-900: #6B4E08;
+  --color-gold-800: #936B0B;
+  --color-gold-700: #B8860B;
+  --color-gold-600: #CFA015;
+  --color-gold-500: #D4AF37;
+  --color-gold-400: #E5C358;
+  --color-gold-300: #F1D98D;
+  --color-gold-100: #FDF7E7;
+  --color-gold-50:  #FFFDF8;
+
+  /* Earthy & Organic Cream */
+  --color-cream-900: #26221A;
+  --color-cream-800: #4A4337;
+  --color-cream-600: #7A7061;
+  --color-cream-300: #D4CDBC;
+  --color-cream-200: #E8E2D4;
+  --color-cream-100: #F4EFE6;
+  --color-cream-50:  #FAF7F2;
+
+  /* WhatsApp Brand Green */
+  --color-wa-primary: #25D366;
+  --color-wa-hover:   #1EBE5D;
+  --color-wa-dark:    #128C7E;
+  --color-wa-bg:      #EAFBF1;
+
+  /* ==========================================================================
+     LIGHT MODE COLOR TOKENS (Crisp, High Contrast, Warm Luxury)
+     ========================================================================== */
+  --bg-main: #FAF7F2;
+  --bg-secondary: #F3ECE0;
+  --bg-card: #FFFFFF;
+  --bg-card-elevated: #FFFFFF;
+  --bg-card-sub: #F5EFE6;
+  --bg-input: #FFFFFF;
+  --bg-nav: rgba(250, 247, 242, 0.94);
+  --bg-nav-scrolled: rgba(255, 255, 255, 0.98);
+
+  --text-heading: #0A2114;
+  --text-body: #2C3831;
+  --text-main: #2C3831;
+  --text-muted: #54645A;
+  --text-light: #76877D;
+  --text-gold-accent: #9A7107;
+  --text-inverse: #FFFFFF;
+
+  --border-light: #E4DCCB;
+  --border-card: #E8E1D2;
+  --border-gold-subtle: rgba(212, 175, 55, 0.3);
+
+  --input-placeholder: #8A9990;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(10, 33, 20, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(10, 33, 20, 0.09);
+  --shadow-lg: 0 18px 40px -8px rgba(10, 33, 20, 0.14);
+  --shadow-gold: 0 10px 28px -4px rgba(212, 175, 55, 0.22);
+  --shadow-wa: 0 10px 30px -4px rgba(37, 211, 102, 0.4);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --theme-transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* ==========================================================================
+   DARK MODE COLOR TOKENS (Midnight Forest, Pure Ivory & Rich Gold)
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-main: #07120A;
+  --bg-secondary: #0C1C11;
+  --bg-card: #112518;
+  --bg-card-elevated: #162F1F;
+  --bg-card-sub: #152C1D;
+  --bg-input: #0E1F14;
+  --bg-nav: rgba(7, 18, 10, 0.94);
+  --bg-nav-scrolled: rgba(12, 28, 17, 0.98);
+
+  --text-heading: #FFFFFF;
+  --text-body: #E2ECE5;
+  --text-main: #E2ECE5;
+  --text-muted: #A8BDB1;
+  --text-light: #7E9689;
+  --text-gold-accent: #E5C358;
+  --text-inverse: #0A2114;
+
+  --border-light: rgba(229, 195, 88, 0.2);
+  --border-card: rgba(229, 195, 88, 0.24);
+  --border-gold-subtle: rgba(229, 195, 88, 0.35);
+
+  --color-cream-50: #0B170F;
+  --color-cream-100: #102316;
+  --color-cream-200: #183321;
+  --color-cream-300: #244830;
+  --color-cream-800: #D8E7DF;
+  --color-cream-900: #FAF7F2;
+
+  --input-placeholder: #6E887B;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 28px -4px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 48px -8px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 10px 30px -4px rgba(229, 195, 88, 0.25);
+}
+
+/* Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth theme transition on core structural components */
+body, header, nav, main, section, footer, .card, .product-card, .btn {
+  transition: var(--theme-transition);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+body, #root, .app-root {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  position: relative;
+  min-width: 320px;
+}
+
+/* Typography Hierarchy with Guaranteed Readability */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-heading);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+strong, b {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-main);
+}
+
+/* Global Container Rules */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
+}
+
+.container-narrow {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 24px);
+  padding-right: clamp(16px, 4vw, 24px);
+}
+
+.section-padding {
+  padding-top: clamp(60px, 8vw, 110px);
+  padding-bottom: clamp(60px, 8vw, 110px);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(36px, 6vw, 54px) auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background-color: var(--color-gold-100);
+  border: 1px solid var(--color-gold-300);
+  color: var(--color-gold-800);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .section-badge {
+  background-color: rgba(229, 195, 88, 0.14);
+  border-color: rgba(229, 195, 88, 0.4);
+  color: var(--color-gold-400);
+}
+
+.section-badge-green {
+  background-color: var(--color-primary-100);
+  border-color: #B4D7C2;
+  color: var(--color-primary-800);
+}
+
+[data-theme="dark"] .section-badge-green {
+  background-color: rgba(37, 211, 102, 0.14);
+  border-color: rgba(37, 211, 102, 0.35);
+  color: #25D366;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  color: var(--text-heading);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  font-weight: 600;
+  font-size: 0.975rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-900) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(16, 51, 32, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(16, 51, 32, 0.35);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-800) 100%);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+  background: linear-gradient(135deg, #2ae06f 0%, #159c8c 100%);
+}
+
+.btn-whatsapp span, .btn-whatsapp svg {
+  color: #FFFFFF !important;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #E5C358 0%, #B8860B 100%);
+  color: #1A1708 !important;
+  font-weight: 700;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline {
+  background: var(--bg-card);
+  color: var(--text-heading);
+  border: 1.5px solid var(--border-card);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-card-sub);
+  border-color: var(--color-gold-500);
+  color: var(--text-heading);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-white:hover {
+  background: #FFFFFF;
+  color: #0A2114 !important;
+  border-color: #FFFFFF;
+}
+
+/* Theme Toggle Button Component */
+.theme-toggle-btn {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-full);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-heading);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08) rotate(12deg);
+  border-color: var(--color-gold-400);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.3);
+}
+
+.theme-icon-sun {
+  color: #F59E0B;
+  animation: rotateSun 0.4s ease-out;
+}
+
+.theme-icon-moon {
+  color: #E5C358;
+  animation: rotateMoon 0.4s ease-out;
+}
+
+@keyframes rotateSun {
+  from { transform: rotate(-90deg) scale(0.6); opacity: 0; }
+  to { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+@keyframes rotateMoon {
+  from { transform: rotate(90deg) scale(0.6); opacity: 0; }
+  to { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+/* Pulse animation for WhatsApp Elements */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-wa {
+  animation: pulse-ring 2.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}

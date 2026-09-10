@@ -1,0 +1,206 @@
+/* Reviews Section Styles */
+.reviews-section {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 3vw, 24px);
+  margin-bottom: 40px;
+}
+
+@media (min-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: clamp(20px, 3vw, 28px) clamp(18px, 2.5vw, 24px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold-400);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.25), var(--shadow-gold);
+}
+
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.review-stars-group {
+  display: flex;
+  gap: 3px;
+}
+
+.review-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.review-quote-wrap {
+  position: relative;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.quote-icon {
+  color: var(--color-gold-400);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.review-body {
+  font-size: 0.9rem;
+  color: var(--text-heading);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.review-product-tag {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  background: var(--bg-card-sub);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  border: 1px solid var(--border-card);
+}
+
+.review-product-tag span {
+  color: var(--text-muted);
+}
+
+.review-product-tag strong {
+  color: var(--text-heading);
+}
+
+.review-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-card);
+}
+
+.user-avatar-initials {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-700) 100%);
+  color: var(--color-gold-400);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-gold-400);
+}
+
+.user-text-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-full-name {
+  font-size: 0.925rem;
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.user-location {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Reviews Footer Prompt */
+.reviews-footer-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border-gold-subtle);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 0.925rem;
+  color: var(--text-heading);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reviews-prompt-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.reviews-prompt-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn-sm-rev {
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 576px) {
+  .reviews-footer-prompt {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+  .reviews-prompt-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-sm-rev {
+    width: 100%;
+  }
+}

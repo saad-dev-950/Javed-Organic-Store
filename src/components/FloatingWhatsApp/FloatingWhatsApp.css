@@ -1,0 +1,173 @@
+/* Floating WhatsApp Button Styles */
+.floating-wa-wrapper {
+  position: fixed;
+  bottom: clamp(16px, 3vw, 24px);
+  right: clamp(16px, 3vw, 24px);
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.floating-wa-btn {
+  width: clamp(52px, 8vw, 62px);
+  height: clamp(52px, 8vw, 62px);
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  position: relative;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.1) rotate(6deg);
+  background: linear-gradient(135deg, #2ae06f 0%, #159c8c 100%);
+}
+
+.wa-btn-tooltip {
+  position: absolute;
+  right: 74px;
+  background: var(--bg-card);
+  color: var(--text-heading) !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: all var(--transition-fast);
+  border: 1px solid var(--color-gold-500);
+  box-shadow: var(--shadow-md);
+}
+
+.floating-wa-btn:hover .wa-btn-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Chat Prompt Bubble */
+.wa-bubble-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-gold-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  width: min(280px, 85vw);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.45);
+  position: relative;
+  animation: bubblePop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bubblePop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bubble-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--bg-card-sub);
+  border: 1px solid var(--border-card);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.bubble-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bubble-avatar {
+  font-size: 1.2rem;
+}
+
+.bubble-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-meta strong {
+  font-size: 0.85rem;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.bubble-online-status {
+  font-size: 0.7rem;
+  color: #25D366;
+  font-weight: 700;
+}
+
+.bubble-msg {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.bubble-action-btn {
+  display: block;
+  text-align: center;
+  background: #25D366;
+  color: #FFFFFF !important;
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.bubble-action-btn:hover {
+  background: #1ebe5d;
+}
+
+@media (max-width: 576px) {
+  .wa-btn-tooltip {
+    display: none;
+  }
+  .floating-wa-wrapper {
+    bottom: 16px;
+    right: 16px;
+    gap: 8px;
+  }
+  .wa-bubble-card {
+    width: min(250px, 78vw);
+    padding: 12px 14px;
+  }
+  .bubble-msg {
+    font-size: 0.775rem;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .floating-wa-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .floating-wa-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}

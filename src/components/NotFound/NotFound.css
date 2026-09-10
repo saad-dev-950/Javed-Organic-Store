@@ -1,0 +1,212 @@
+/* 404 Error Page Styles */
+.not-found-page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+}
+
+.not-found-main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.nf-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.nf-glow-1 {
+  width: min(450px, 70vw);
+  height: min(450px, 70vw);
+  background: rgba(212, 175, 55, 0.12);
+  top: 10%;
+  left: 20%;
+}
+
+.nf-glow-2 {
+  width: min(400px, 60vw);
+  height: min(400px, 60vw);
+  background: rgba(22, 70, 44, 0.12);
+  bottom: 10%;
+  right: 20%;
+}
+
+.not-found-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-gold-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(30px, 6vw, 54px) clamp(20px, 5vw, 40px);
+  text-align: center;
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--color-gold-100);
+  border: 1px solid var(--color-gold-300);
+  color: var(--color-gold-800);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+[data-theme="dark"] .nf-badge {
+  background: rgba(229, 195, 88, 0.14);
+  border-color: rgba(229, 195, 88, 0.4);
+  color: var(--color-gold-400);
+}
+
+/* 404 Numbers Display */
+.nf-404-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 18px);
+  margin-bottom: 20px;
+}
+
+.nf-digit {
+  font-family: var(--font-serif);
+  font-size: clamp(4.5rem, 14vw, 8.5rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-gold-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .nf-digit {
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--color-gold-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nf-logo-badge {
+  position: relative;
+  width: clamp(75px, 12vw, 110px);
+  height: clamp(75px, 12vw, 110px);
+  border-radius: 50%;
+  border: 3px solid var(--color-gold-500);
+  overflow: visible;
+  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.3);
+  animation: pulseLogo 3s infinite ease-in-out;
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(0.96); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(0.96); }
+}
+
+.nf-logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nf-sparkle-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: var(--color-gold-500);
+  background: var(--bg-card);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+/* Titles */
+.nf-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--text-heading) !important;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.nf-subtitle {
+  font-size: clamp(0.925rem, 2vw, 1.05rem);
+  color: var(--text-muted) !important;
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+/* Suggestions */
+.nf-suggestions-box {
+  background: var(--bg-main);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px clamp(16px, 4vw, 28px);
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 580px;
+  text-align: left;
+}
+
+.sugg-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-heading) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.sugg-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted) !important;
+}
+
+/* Actions */
+.nf-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.nf-btn-home {
+  padding: 14px 28px;
+  font-size: 0.975rem;
+}
+
+.nf-btn-wa {
+  padding: 14px 28px;
+  font-size: 0.975rem;
+}
+
+@media (max-width: 576px) {
+  .nf-actions-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nf-btn-home, .nf-btn-wa {
+    width: 100%;
+  }
+}
