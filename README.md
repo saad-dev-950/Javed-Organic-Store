@@ -102,7 +102,7 @@ npm run dev
 - **Developer Name**: Saad Nadeem
 - **Platform / Brand**: Saad Dev Hub 🚀
 - **Portfolio Website**: [codebysaad.vercel.app](https://codebysaad.vercel.app/)
-- **Role**: Full-Stack Web Developer
+- **Role**: Full-Stack Developer | MERN Stack
 - **Mission**: Building clean, modern, high-performance, and user-centric web applications.
 
 ---
